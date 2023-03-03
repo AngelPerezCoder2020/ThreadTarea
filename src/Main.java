@@ -37,7 +37,11 @@ public class Main {
         Integer max = 0;
         Map<String,Integer> palMap = new HashMap<>();
         Map<String,Integer> result = new HashMap<>();
-        String[] palabras = str.toLowerCase().split(" ");
+        String[] palabras = str
+                .replace(",","")
+                .replace(".","")
+                .toLowerCase()
+                .split(" ");
         for(String p:palabras){
             if(palMap.containsKey(p)) palMap.put(p,palMap.get(p)+1);
             else palMap.put(p,1);
